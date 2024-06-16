@@ -1,4 +1,8 @@
 services:
+    beef:
+        build: beef-build/
+        ports:
+            - 3000:3000
     liferay:
         deploy:
             resources:
@@ -14,7 +18,7 @@ services:
             - LIFERAY_VIRTUAL_PERIOD_HOSTS_PERIOD_VALID_PERIOD_HOSTS=*
             - LIFERAY_WEB_PERIOD_SERVER_PERIOD_PROTOCOL=http
         hostname: liferay
-        image: liferay/dxp:7.4.13-u46
+        image: liferay/dxp:2023.q4.2
         ports:
             - 8000:8000
             - 8080:8080
